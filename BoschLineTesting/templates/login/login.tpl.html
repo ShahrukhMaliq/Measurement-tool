@@ -1,0 +1,19 @@
+<div class="loginCard">
+    <md-card class="cardContainer">
+        <md-card-title>
+            Login
+        </md-card-title>
+        <md-card-subtitle>Please enter your credentials to login</md-card-subtitle>
+        <md-card-content>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <md-input-container>
+                    <input mdInput size=""  type="text" required name="username" placeholder="Username" [(ngModel)]="login"/>
+                </md-input-container>
+                <md-input-container>
+                    <input mdInput size="" type="password" required name="password" placeholder="Password" [(ngModel)]="password"/>
+                </md-input-container>
+                <button md-raised-button color="primary">Login</button>
+            </form>
+        </md-card-content>
+    </md-card>
+</div>

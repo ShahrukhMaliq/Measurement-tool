@@ -1,0 +1,136 @@
+md-list-item.prodDetTxt {
+    justify-content: flex-start;
+}
+
+div.productDetailsCont {
+    display: flex;
+    flex-flow: column;
+    flex-direction: row;
+}
+md-list.prodDetSec {
+    flex: 1;
+    
+    flex-direction: row;
+}
+md-card.prorDetCardSec {
+    margin-bottom: 20px;
+}
+md-card.obsCard {
+    margin-top: 20px;
+    /*height: 400px;*/
+    font-size: 24px;
+}
+
+div.productDetailsPage {
+    display: flex;
+    flex-direction: row;  
+}
+div.productDetails {
+    flex: 4;
+}
+div.observationList {
+    margin-left: 30px;
+    width: 350px;
+    height: 1000px;
+    padding-bottom: 50px;
+    border-bottom: solid #AFAFAF 2px;
+    overflow-y: scroll;
+}
+div.observationList::-webkit-scrollbar-thumb {
+	background-color: #929292;
+}
+div.observationList::-webkit-scrollbar-track {
+	border-radius: 15px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #FFFFFF;
+}
+div.observationList::-webkit-scrollbar {
+    width: 12px;
+	background-color: #F5F5F5;
+    opacity: 0;
+}
+
+div.obListItems {
+    flex-direction: row;
+}
+md-list.testDetailsList md-list-item {
+    justify-content: flex-start;
+   
+}
+md-list.testDetailsList md-list-item h2 {
+    font-weight: bold;
+    font-size: 16;
+}
+md-list.testDetailsList md-list-item i {
+    display: table;
+}
+
+div.testDetailsCont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+div.testDetailsCont div.testInfoField {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-width: 300px;
+    min-height: 130px;
+    overflow: hidden;
+    text-align: left;
+    background-color: #DeDeDe;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    justify-content: center;
+    webkit-box-shadow: 3px 3px 1px 1px rgba(1, 0, 0, 0.2);
+    -moz-box-shadow: 3px 3px 1px 1px rgba(1, 0, 0, 0.2);
+    box-shadow: 3px 3px 1px 1px rgba(1, 0, 0, 0.2);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+div.testDetailsCont div.testInfoField.testInfoQuestion {
+    width: 80%;
+    min-width: 80%;
+    min-height: 200px;
+}
+
+div.testDetailsCont div.testInfoField h2{
+    font-weight: bold;
+    font-size: 20;
+    color: #525252;
+    text-align: center;
+}
+div.testDetailsCont div.testInfoField h2 i.material-icons {
+    font-size: 16;
+    margin-right: 5px;
+    color: #426297;
+    
+}
+div.testDetailsCont div.testInfoField p{
+    margin-top: 2px;
+    font-weight: lighter;
+    font-size: 16;
+    text-align: center;
+
+}
+div.testDetailsCont div.testInfoField i{
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+div.observationList div.obsListHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.observationList div.obsListHead button {
+    height: 40px;
+}

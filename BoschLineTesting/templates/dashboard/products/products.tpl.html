@@ -1,0 +1,65 @@
+<div class="subNavContainer">
+    <div class="searchToolbox">
+        <div class="searchBox">
+            <i md-icon class="material-icons md-24 fabBut" style="vertical-align: center" *ngIf="!addEnabled">search</i>
+            <md-input-container>
+                <input mdInput class="searchImp" align="right" name="searchProducts" placeholder="Search Products" #searchBox [(ngModel)]="prodSearchStr" (ngModelChange)="prodsFilterChanged($event)"/>
+            </md-input-container>
+        </div>
+        <div class="searchBox">
+            <i md-icon class="material-icons md-24 fabBut" *ngIf="!addEnabled">search</i>
+            <md-input-container>
+                <input mdInput class="searchImp" align="right" name="searchGroup" placeholder="Search Groups" #grpSearchBox [(ngModel)]="groupSearchStr"  (ngModelChange)="groupFilterChanged($event)"/>
+            </md-input-container>
+        </div>
+    </div>
+    <button md-mini-fab (click)="toggleAdd()" color="primary">
+        <i md-icon class="material-icons md-24 fabBut" *ngIf="!addEnabled">add</i>
+        <i md-icon class="material-icons md-24 fabBut" *ngIf="addEnabled">close</i>
+    </button>
+    <md-card class="prodListCard" *ngIf="addEnabled">
+        <form [formGroup]="prodForm" (submit)="addProduct($event)">
+            <md-card-title>
+                Add New Product
+            </md-card-title>
+            <md-card-content>
+                <div class="editContainer">
+                        <md-input-container class="prodinfo">
+                            <input mdInput name="name" [formControl]="prodForm.controls['name']" required placeholder="Enter Product Name"/>
+                        </md-input-container>
+                        <md-input-container class="prodinfo">
+                            <input mdInput name="number" required [formControl]="prodForm.controls['number']" placeholder="Enter Product Number"/>
+                        </md-input-container>
+                        <md-input-container class="prodinfo">
+                            <input mdInput name="groupName" required [formControl]="prodForm.controls['groupName']" placeholder="Enter Group Name"/>
+                        </md-input-container>
+                </div>
+            </md-card-content>
+            <md-card-actions align="right" *ngIf="!edit">
+                <button md-icon-button>
+                    <a><button type="submit" md-icon-button><i md-icon class="material-icons md-24">save</i></button></a>
+                </button>
+            </md-card-actions>
+        </form>
+    </md-card>
+
+    <h2 class="text-primary">Products List </h2>
+    <!--<h3>Groups</h3>
+    <div class="groupSelection">
+        <button class="groupFilterBut" *ngFor="let groupName of prodGroupsNames">{{groupName}}</button>
+    </div>-->
+    <p *ngIf="(prodSearchStr !== '' || groupSearchStr !== '') && prodGroupArr.length !== 0">Showing {{prodGroupArr.length}} products from search.</p>
+    <div id="productsContainer">
+        <h3 *ngIf="prodGroupArr.length === 0">No products found. Please try changing search filters.</h3>
+        <div *ngFor="let group of prodGroupArr">
+            <h3>{{group.groupName}}</h3>
+            <div class="prodGroup">
+                <bsh-product *ngFor="let prod of group.prods" [product]="prod"></bsh-product>
+            </div>
+        </div>
+        <!--<bsh-product *ngFor="let prod of productsFiltered" [product]="prod"></bsh-product>-->
+    </div>
+<!--<button md-fab color="primary" (click)="toggleAdd()" color="blue">
+        <button md-icon-button><i md-icon class="material-icons md-24 fabBut">add</i></button>
+    </button>-->
+</div>

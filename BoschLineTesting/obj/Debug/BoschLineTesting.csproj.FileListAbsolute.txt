@@ -1,0 +1,4 @@
+D:\linetesting-master\BoschLineTesting\obj\Debug\BoschLineTesting.csprojResolveAssemblyReference.cache
+D:\linetesting-master\BoschLineTesting\obj\Debug\BoschLineTesting.Migrations.Initial.resources
+D:\linetesting-master\BoschLineTesting\obj\Debug\BoschLineTesting.Migrations.ngCtrls.resources
+D:\linetesting-master\BoschLineTesting\obj\Debug\BoschLineTesting.csproj.GenerateResource.Cache
